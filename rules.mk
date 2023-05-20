@@ -35,7 +35,7 @@ ARCH_FLAGS	:= -mthumb -mcpu=cortex-m3
 #  -g: system’s native format, -g0:off, -g/g1,-g2,-g3 -> more verbosely
 #  -ggdb: for gdb, -ggdb0:off, -ggdb/ggdb1,-ggdb2,-ggdb3 -> more verbosely
 #  -gdwarf: in DWARF format, -gdwarf-2,-gdwarf-3,-gdwarf-4,-gdwarf-5
-DEBUG_FLAGS ?= -g0
+DEBUG_FLAGS ?= -gdwarf-2
 
 # c flags
 OPT			?= -O3
