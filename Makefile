@@ -23,14 +23,14 @@ USE_LVGL		?= n
 # Build with Waveshare e-paper lib, y:yes, n:no
 USE_EPAPER		?= n
 # Programmer, jlink, stlink, cmsis-dap, pyocd
-FLASH_PROGRM    ?= stlink
+FLASH_PROGRM    ?= cmsis-dap
 
 
 ##### Toolchains #######
 
 #ARM_TOOCHAIN 	?= /opt/gcc-arm/gcc-arm-11.2-2022.02-x86_64-arm-none-eabi/bin
 #ARM_TOOCHAIN 	?= /opt/gcc-arm/arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi/bin
-ARM_TOOCHAIN 	?= /opt/gcc-arm/arm-gnu-toolchain-12.2.rel1-x86_64-arm-none-eabi/bin
+ARM_TOOCHAIN 	?= /usr/bin
 # path to st-flash
 ST_FLASH		?= st-flash
 # path to JLinkExe

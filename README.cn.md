@@ -67,6 +67,12 @@ cd /opt/gcc-arm/
 sudo mv ~/Backup/linux/gcc-arm-11.2-2022.02-x86_64-arm-none-eabi/ .
 sudo chown -R root:root gcc-arm-11.2-2022.02-x86_64-arm-none-eabi/
 ```
+
+Arch Linux:
+```
+pacman -S arm-none-eabi-gcc
+```
+
 ## 2. 安装 SEGGER J-Link 或 ST-Flash
 
 从 [J-Link / J-Trace Downloads](https://www.segger.com/downloads/jlink/) 下载 JLink并安装
@@ -76,6 +82,21 @@ sudo chown -R root:root gcc-arm-11.2-2022.02-x86_64-arm-none-eabi/
 sudo dpkg -i JLink_Linux_V770a_x86_64.deb
 ```
 默认的安装目录为 */opt/SEGGER*
+
+Arch Linux:
+```bash
+# OpenOCD
+pacman -S openocd
+
+# PyOCD
+pacman -S pyocd
+
+# JLink
+yay -S jlink
+
+# ST-Flash
+pacman -S stlink
+```
 
 ## 3. 导出本项目
 
@@ -105,11 +126,11 @@ USE_DSP			?= n
 # 是否使用 Helix MP3 解码库, y:yes, n:no
 USE_HELIX		?= n
 # 烧录工具, jlink, stlink, cmsis-dap, pyocd
-FLASH_PROGRM    ?= stlink
+FLASH_PROGRM    ?= cmsis-dap # 使用PW-Link
 
 ##### Toolchains #######
 # 根据本地环境, 设置工具链路径
-ARM_TOOCHAIN 	?= /opt/gcc-arm/arm-gnu-toolchain-12.2.rel1-x86_64-arm-none-eabi/bin
+ARM_TOOCHAIN 	?= /usr/bin
 # st-flash 路径
 ST_FLASH		?= st-flash
 # JLinkExe 路径

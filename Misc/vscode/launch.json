@@ -12,9 +12,13 @@
             "request": "launch",        // launch or attach
             "type": "cortex-debug",
             "runToEntryPoint": "main",
-            "servertype": "jlink",
+            "servertype": "openocd",
             "device": "STM32F103RC",
             "interface": "swd",
+	        "configFiles": [
+                "interface/cmsis-dap.cfg",
+                "target/stm32f1x.cfg"
+            ],
             "runToMain": true,          // false: run to reset handler
             "preLaunchTask": "build",   // task from tasks.json
             // "preLaunchCommands": ["Build all"], if not using preLaunchTask
